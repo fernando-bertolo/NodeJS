@@ -1,0 +1,6 @@
+Dependencias instaladas
+
+npm install express
+npm install --save-dev nodemon
+npm install mysql2
+npm install sequelize sequelize-cli path
