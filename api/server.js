@@ -1,15 +1,13 @@
 const express = require("express");
-const bodyParser = require("body-parser");
+const ListaUser = require("./routes/listUser");
+const CreateUser = require("./routes/createUser");
 
 const app = express();
-app.use(bodyParser.json());
 const port = 3000;
-const CreateUser = require("./routes/criacaoUser");
+app.listen(port);
 
-app.register(CreateUser);
-
-app.listen(port, () => {
-  console.log(`O App esta rodando na porta ${port}`);
-});
+//Rotas de Usuário
+app.use(ListaUser);
+app.use(CreateUser);
 
 module.exports = app;
