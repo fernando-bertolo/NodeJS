@@ -1,8 +1,8 @@
 const express = require("express");
-const UpdateUser = express.Router();
+const updateUser = express.Router();
 
-UpdateUser.put("update-user", (req, res) => {
-  res.send("User update sucessfully");
+updateUser.put("/update-user", (req, res) => {
+  res.send("Usuário alterado");
 });
 
-module.exports = UpdateUser;
+module.exports = updateUser;

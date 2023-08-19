@@ -1,8 +1,8 @@
 const express = require("express");
-const CreateUser = express.Router();
+const createUser = express.Router();
 
-CreateUser.post("/create-user", (req, res) => {
+createUser.post("/create-user", (req, res) => {
   res.send("Usuário criado");
 });
 
-module.exports = CreateUser;
+module.exports = createUser;

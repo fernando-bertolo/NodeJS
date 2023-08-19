@@ -1,8 +1,8 @@
 const express = require("express");
-const ListaUser = express.Router();
+const listaUser = express.Router();
 
-ListaUser.get("/list-user", (req, res) => {
+listaUser.get("/list-user", (req, res) => {
   res.send("Usuário listado");
 });
 
-module.exports = ListaUser;
+module.exports = listaUser;
