@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 const database = require("./db");
 
-const usuario = database.define('teste', {});
+const usuarios = database.define('Usuarios', {});
 
-module.exports = usuario;
+module.exports = usuarios;
