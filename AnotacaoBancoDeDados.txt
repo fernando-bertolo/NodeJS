@@ -1,0 +1,43 @@
+Datase: DatabaseCar
+
+Tabelas:
+
+1 - Usuarios
+    ID
+    Nome
+    E-mail
+    Password
+    Permissao
+
+
+2 - Veículos
+    ID
+    Marca
+    Modelo
+    Versao
+    Ano
+    Combustivel
+    Cor
+    KM
+    VALOR
+    OPCIONAIS
+        AirBag
+        Alarme
+        Ar Condicionado
+
+
+3 - Clientes
+    ID
+    Nome
+    Endereco
+    Bairro
+    Cidade
+    Estado
+    CEP
+    Naturalidade
+    Estado Civil
+    Data de Nascimento
+    Celular
+    RG
+    CPF
+    E-mail
