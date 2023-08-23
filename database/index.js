@@ -1,7 +1,6 @@
 (async () => {
-
-    const database = require('./db');
-    const usuarios = require('./user');
-    const veiculos = require('./veiculos');
-    await database.sync();
+  const database = require("./db");
+  const usuarios = require("./usuarios/usuarios");
+  const veiculos = require("./veiculos/veiculos");
+  await database.sync();
 })();

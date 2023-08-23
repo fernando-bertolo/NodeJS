@@ -1,8 +1,11 @@
 const express = require("express");
-const listaUser = express.Router();
+const listaUser = express();
+const usuarios = require("../../../database/usuarios/usuarios");
 
-listaUser.get("/list-user", (req, res) => {
-  res.send("Usuário listado");
+// Listando todas as informações
+listaUser.get("/list-user", async (req, res) => {
+  const listUser = await usuarios.findAll();
+  res.send(listUser);
 });
 
 module.exports = listaUser;

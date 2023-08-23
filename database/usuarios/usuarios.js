@@ -1,8 +1,10 @@
 const Sequelize = require("sequelize");
-const database = require("./db");
+const database = require("../db");
 
 const usuarios = database.define("Usuarios", {
   nome: Sequelize.STRING,
+  email: Sequelize.STRING,
+  senha: Sequelize.STRING,
 });
 
 module.exports = usuarios;

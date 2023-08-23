@@ -1,4 +1,8 @@
 const express = require("express");
+const app = express();
+app.use(express.json());
+const port = 3000;
+app.listen(port);
 
 //Import Users
 const listaUser = require("./routes/usuarios/listUser");
@@ -8,10 +12,6 @@ const deleteUser = require("./routes/usuarios/deleteUser");
 
 //Import Veiculos
 const createVeiculo = require("./routes/veiculos/createVeiculo");
-
-const app = express();
-const port = 3000;
-app.listen(port);
 
 //Rotas de Usuário
 app.use(listaUser);
