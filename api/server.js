@@ -12,6 +12,7 @@ const deleteUser = require("./routes/usuarios/deleteUser");
 
 //Import Veiculos
 const createVeiculo = require("./routes/veiculos/createVeiculo");
+const listVeiculo = require("./routes/veiculos/listVeiculos");
 
 //Rotas de Usuário
 app.use(listaUser);
@@ -21,5 +22,6 @@ app.use(deleteUser);
 
 //rotas de Veiculos
 app.use(createVeiculo);
+app.use(listVeiculo);
 
 module.exports = app;

@@ -2,6 +2,11 @@ const Sequelize = require("sequelize");
 const database = require("../db");
 
 const veiculos = database.define("Veiculos", {
+  id: {
+    type: Sequelize.UUID,
+    defaultValue: Sequelize.UUIDV4,
+    primaryKey: true,
+  },
   Marca: Sequelize.STRING,
   Modelo: Sequelize.STRING,
   Versao: Sequelize.STRING,
