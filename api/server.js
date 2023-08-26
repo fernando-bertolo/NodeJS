@@ -11,9 +11,10 @@ const updateUser = require("./routes/usuarios/updateUser");
 const deleteUser = require("./routes/usuarios/deleteUser");
 
 //Import Veiculos
-const createVeiculo = require("./routes/veiculos/createVeiculo");
+const criarVeiculo = require("./routes/veiculos/criarVeiculo");
 const listVeiculo = require("./routes/veiculos/listVeiculos");
 const delecaoVeiculos = require("./routes/veiculos/delecaoVeiculos");
+const alteraVeiculos = require("./routes/veiculos/alterarVeiculo");
 
 //Rotas de Usuário
 app.use(listaUser);
@@ -22,8 +23,9 @@ app.use(updateUser);
 app.use(deleteUser);
 
 //rotas de Veiculos
-app.use(createVeiculo);
+app.use(criarVeiculo);
 app.use(listVeiculo);
 app.use(delecaoVeiculos);
+app.use(alteraVeiculos);
 
 module.exports = app;
