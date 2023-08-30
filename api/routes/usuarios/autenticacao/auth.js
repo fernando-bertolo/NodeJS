@@ -27,7 +27,7 @@ auth.post("/login", async (request, response) => {
     expiresIn: "1hr",
   });
 
-  res.send({
+  response.send({
     auth: true,
     token: token,
   });

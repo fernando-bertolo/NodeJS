@@ -7,3 +7,5 @@ npm install sequelize
 npm install jsonwebtoken
 npm install bcrypt
 
+npm install express mysql2 sequelize jsonwebtoken bcrypt
+
