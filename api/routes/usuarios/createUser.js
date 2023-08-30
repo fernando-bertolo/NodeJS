@@ -5,14 +5,8 @@ const { Sequelize } = require("sequelize");
 
 createUser.post("/create-user", (request, response) => {
   try {
-
-    if(request.body.id){
-      usuarios.create(request.body);
-      response.send("Usuário criado com sucesso");
-    } else {
-      res.send("Digite um valor válido");
-    }
-
+    usuarios.create(request.body);
+    response.send("Usuário criado com sucesso");
   } catch (error) {
     console.log(error);
   }

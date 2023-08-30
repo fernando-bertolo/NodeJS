@@ -7,9 +7,14 @@ const usuarios = database.define("Usuarios", {
     defaultValue: Sequelize.UUIDV4,
     primaryKey: true,
   },
-  nome: Sequelize.STRING,
-  email: Sequelize.STRING,
-  senha: Sequelize.STRING,
+  usuario: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  senha: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
 });
 
 module.exports = usuarios;

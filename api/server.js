@@ -10,6 +10,9 @@ const createUser = require("./routes/usuarios/createUser");
 const updateUser = require("./routes/usuarios/updateUser");
 const deleteUser = require("./routes/usuarios/deleteUser");
 
+//Import Autenticação
+const autenticacao = require("./routes/usuarios/autenticacao/auth");
+
 //Import Veiculos
 const criarVeiculo = require("./routes/veiculos/criarVeiculo");
 const listVeiculo = require("./routes/veiculos/listVeiculos");
@@ -21,6 +24,9 @@ app.use(listaUser);
 app.use(createUser);
 app.use(updateUser);
 app.use(deleteUser);
+
+//Rotas de Autenticação
+app.use(autenticacao);
 
 //rotas de Veiculos
 app.use(criarVeiculo);

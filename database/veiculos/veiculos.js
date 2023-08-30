@@ -11,84 +11,100 @@ const veiculos = database.define("Veiculos", {
     type: Sequelize.STRING,
     validate: {
       isString(value) {
-        if(typeof value !== 'string') {
-          throw new Error("Digite um valor válido. Neste campo só é permitido texto");
+        if (typeof value !== "string") {
+          throw new Error(
+            "Digite um valor válido. Neste campo só é permitido texto"
+          );
         }
-      }
-    }
+      },
+    },
   },
 
   Modelo: {
     type: Sequelize.STRING,
     validate: {
       isString(value) {
-        if(typeof value !== 'string'){
-          throw new Error("Digite um valor válido. Neste campo só é permitido texto");
+        if (typeof value !== "string") {
+          throw new Error(
+            "Digite um valor válido. Neste campo só é permitido texto"
+          );
         }
-      }
-    }
+      },
+    },
   },
   Versao: {
     type: Sequelize.STRING,
     validate: {
       isString(value) {
-        if(typeof value !== 'string'){
-          throw new Error("Digite um valor válido. Neste campo só é permitido texto");
+        if (typeof value !== "string") {
+          throw new Error(
+            "Digite um valor válido. Neste campo só é permitido texto"
+          );
         }
-      }
-    }
+      },
+    },
   },
   Ano: {
     type: Sequelize.INTEGER,
     validate: {
-      isNumber(value){
-        if(typeof value !== 'number'){
-          throw new Error("Digite um valor válido. Neste campo só é permitido valores inteiros");
+      isNumber(value) {
+        if (typeof value !== "number") {
+          throw new Error(
+            "Digite um valor válido. Neste campo só é permitido valores inteiros"
+          );
         }
-      }
-    }
+      },
+    },
   },
   Combustivel: {
     type: Sequelize.STRING,
     validate: {
-      isString(value){
-        if(typeof value !== 'string'){
-          throw new Error("Digite um valor válido. Neste campo só é permitido texto");
+      isString(value) {
+        if (typeof value !== "string") {
+          throw new Error(
+            "Digite um valor válido. Neste campo só é permitido texto"
+          );
         }
-      }
-    }
+      },
+    },
   },
-  Cor:{
+  Cor: {
     type: Sequelize.STRING,
     validate: {
-      isString(value){
-        if(typeof value !== 'string'){
-          throw new Error("Digite um valor válido. Neste campo só é permitido texto");
+      isString(value) {
+        if (typeof value !== "string") {
+          throw new Error(
+            "Digite um valor válido. Neste campo só é permitido texto"
+          );
         }
-      }
-    }
+      },
+    },
   },
 
   Quilometragem: {
     type: Sequelize.DOUBLE,
     validate: {
-      isFloat(value){
-        if(typeof value !== 'number'){
-          throw new Error("Digite um valor válido. Neste campo só é permitido números");
+      isFloat(value) {
+        if (typeof value !== "number") {
+          throw new Error(
+            "Digite um valor válido. Neste campo só é permitido números"
+          );
         }
-      }
-    }
+      },
+    },
   },
   Valor: {
     type: Sequelize.DOUBLE,
     validate: {
-      isFloat(value){
-        if(typeof value !== 'number'){
-          throw new Error("Digite um valor válido. Neste campo só é permitido números");
+      isFloat(value) {
+        if (typeof value !== "number") {
+          throw new Error(
+            "Digite um valor válido. Neste campo só é permitido números"
+          );
         }
-      }
-    }
-  }
+      },
+    },
+  },
 });
 
 module.exports = veiculos;
