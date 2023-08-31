@@ -1,0 +1,11 @@
+Dependencias instaladas
+
+npm install express
+npm install --save-dev nodemon
+npm install mysql2
+npm install sequelize 
+npm install jsonwebtoken
+npm install bcrypt
+
+npm install express mysql2 sequelize jsonwebtoken bcrypt
+
