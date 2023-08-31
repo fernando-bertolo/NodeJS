@@ -9,7 +9,7 @@ auth.post("/login", async (request, response) => {
   const { usuario, senha } = request.body;
   const user = await usuarios.findOne({
     where: {
-      usuario: usuario,
+      usuario: usuario, // valor da esquerda é o valor da tabela no mysql e o da direita o da requisição
     },
   });
 
@@ -26,6 +26,8 @@ auth.post("/login", async (request, response) => {
   const token = jwt.sign({ id: usuarios.id }, "your_jwt_secret", {
     expiresIn: "1hr",
   });
+
+  const validJwt = jwt.decode("khwdjsjdsajgdasgdsjgjdsgsjgjaxjs");
 
   response.send({
     auth: true,
