@@ -4,7 +4,6 @@ import styled from "styled-components";
 const FormContainer = styled.form`
     display: flex;
     align-items: flex-end;
-    width: 100%;
     gap: 10px;
     flex-wrap: wrap; //quando a tela diminuir os campos de ajustam pra baixo
     background-color: #fff;

@@ -2,11 +2,11 @@ import Global from "./styles/Global";
 import styled from "styled-components";
 import {toast, ToastContainer} from "react-toastify";
 import Form from "./components/Form";
+import Grid from "./components/Grid";
 
 
 const Container = styled.div `
   width: 100%;
-  max-width: 800px;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -23,6 +23,7 @@ function App() {
       <Container>
         <Title>USUARIOS</Title>
         <Form/>
+        <Grid/>
       </Container>
       <ToastContainer autoClose={3000} position={toast.POSITION.BOTTOM_LEFT}/>
       <Global/>
