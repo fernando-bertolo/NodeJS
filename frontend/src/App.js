@@ -1,35 +1,33 @@
+import Global from "./styles/Global";
+import styled from "styled-components";
+import {toast, ToastContainer} from "react-toastify";
+import Form from "./components/Form";
+
+
+const Container = styled.div `
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+`;
+
+const Title = styled.h2``;
 
 
 function App() {
   return (
-    <div class="main-login">
-      <form action="" class="card-login">
-        <h1>Login</h1>
-        <div class="textfield">
-          <label for="usuario">Usuário</label>
-          <input type="text" name="usuario" placeholder="Usuário" />
-        </div>
-        <div class="textfield">
-          <label for="senha">Senha</label>
-          <input type="password" placeholder="Senha" />
-        </div>
-        <button class="btn-login">
-          <a href="/Dashboard/Home/dashboard.html" rel="noopener noreferrer"
-            >Login</a
-          >
-        </button>
+    <>
+      <Container>
+        <Title>USUARIOS</Title>
+        <Form/>
+      </Container>
+      <ToastContainer autoClose={3000} position={toast.POSITION.BOTTOM_LEFT}/>
+      <Global/>
+    </>
 
-        <section class="cadastros">
-          <button class="btn-cadastro">
-            <a href="/Cadastro/cadastro.html">Realizar cadastro</a>
-          </button>
-
-          <button class="btn-EsqueciSenha">
-            <a href="">Esqueci senha</a>
-          </button>
-        </section>
-      </form>
-    </div>
   );
 }
 
