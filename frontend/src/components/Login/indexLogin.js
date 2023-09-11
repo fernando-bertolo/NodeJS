@@ -1,35 +1,38 @@
 import axios from "axios";
 import "./indexLogin.css";
 import {useState} from "react";
+import { Navigate } from "react-router-dom";
 
 
 function Login() {
 
-    const [usuario, setUsuario] = useState('');
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
+    const [inputUsuario, setInputUsuario] = useState('');
+    const [inputPassword, setInputPassword] = useState('');
+    const [mensagemError, setMensagemError] = useState('');
+    const [autenticacao, setAutenticacao] = useState(false);
 
-    const handleLogin = async (e) => {
-      e.preventDefault();
-
-      console.log(usuario, password);     
-      
+    const handleLogin = async (event) => {
       try {
-        const response = await axios.post("http://localhost:3000/login-teste",
-        JSON.stringify({usuario, password}),
-        {
-          headers: { 'Content-Type': 'applicantion/json'}
+        event.preventDefault();
+        const response = await axios.post("http://localhost:3000/login", {
+          usuario: inputUsuario, // Esta pegando o usuario e senha da rota /login do backend
+          senha: inputPassword
+        });
+        setMensagemError(""); // limpando a mensagem de erro
+        console.log(response);
+
+        setAutenticacao(true);
+        if(autenticacao) {
+          return <Navigate to="/Dashboard"/>
         }
-      );
-      } catch (error) {
-        if(!error?.response) {
-          setError("ERRO AO ACESSA RO SERVIDOR");
-        } else if(error.response.status === 401){
-          setError("Usuario ou senha invalidos");
+      } catch (mensagemError) {
+        if(mensagemError.response.status === 401) {
+          setMensagemError(mensagemError.response.data.message);
+        } else{
+          setMensagemError("ERRO AO ACESSAR O SERVIDOR");
         } 
       }
     };
-
 
 
     return (
@@ -37,23 +40,22 @@ function Login() {
         <form action="" className="card-login">
           <h1>Login</h1>
           <div className="textfield">
-            <label for="usuario">Usuário</label>
+            <label for="usuario" id="usuario">Usuário</label>
 
             <input type="text" 
                    name="usuario" 
                    placeholder="Usuário" 
                    require
-                   onChange={(e) => setUsuario(e.target.value)}
+                   onChange={evento => {setInputUsuario(evento.target.value)}}
             />
           
           </div>
           <div className="textfield">
-            <label for="senha">Senha</label>
+            <label for="Senha" id="Senha">Senha</label>
             <input type="password" 
                    placeholder="Senha" 
                    require
-                   onChange={(e) => setPassword(e.target.value)}
-            
+                   onChange={evento => {setInputPassword(evento.target.value)}}
             />
           </div>
           <button className="btn-login" 
@@ -66,7 +68,7 @@ function Login() {
             </button>
           </section>
         </form>
-        <p>{error}</p>
+        <p className="Message-teste">{mensagemError}</p>
       </div>
     );
 

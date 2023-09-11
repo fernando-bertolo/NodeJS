@@ -14,5 +14,5 @@ npm install express sequelize mysql2 bcrypt jsonwebtoken
 > No Frontend é utilizado o <strong>ReactJS</strong> com as seguintes dependencias abaixo:
 
 ```
-npm install styled-components axios react-icons react-toastify
+npm install styled-components axios react-icons react-toastify react-router-dom
 ```

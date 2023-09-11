@@ -13,6 +13,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .card-login {
@@ -103,7 +104,6 @@ body {
 
 .btn-EsqueciSenha {
   width: 40%;
-  height: 10%;
   padding: 10px 5px;
   border: none;
   border-radius: 10px;
@@ -113,5 +113,12 @@ body {
 
 .btn-EsqueciSenha > a {
   text-decoration: none;
+  color: white;
+}
+
+
+.Message-teste{
+  display: flex;
+  font-size: 30px;
   color: white;
 }
