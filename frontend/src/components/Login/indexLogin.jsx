@@ -1,7 +1,7 @@
 import axios from "axios";
 import "./indexLogin.css";
 import {useState} from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 function Login() {
@@ -9,7 +9,7 @@ function Login() {
     const [inputUsuario, setInputUsuario] = useState('');
     const [inputPassword, setInputPassword] = useState('');
     const [mensagemError, setMensagemError] = useState('');
-    const [autenticacao, setAutenticacao] = useState(false);
+    const navigate = useNavigate();
 
     const handleLogin = async (event) => {
       try {
@@ -20,11 +20,8 @@ function Login() {
         });
         setMensagemError(""); // limpando a mensagem de erro
         console.log(response);
+        navigate("/home")
 
-        setAutenticacao(true);
-        if(autenticacao) {
-          return <Navigate to="/Dashboard"/>
-        }
       } catch (mensagemError) {
         if(mensagemError.response.status === 401) {
           setMensagemError(mensagemError.response.data.message);
@@ -64,7 +61,7 @@ function Login() {
   
           <section className="cadastros">  
             <button className="btn-EsqueciSenha">
-              <a href="">Esqueci senha</a>
+              <a href="#">Esqueci senha</a>
             </button>
           </section>
         </form>
