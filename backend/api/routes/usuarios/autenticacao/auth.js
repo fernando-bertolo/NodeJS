@@ -14,13 +14,13 @@ auth.post("/login", async (request, response) => { // Utilizamos uma funcão ass
   });
 
   if (!user) {
-    return response.status(401).json({message: "Usuário não encontrado"});
+    return response.status(401).json({message: "Usuário ou senha incorreto"});
   }
 
   const validaSenha = await bcrypt.compare(senha, user.senha); // passando o hash da senha que foi criado no createUser.js e comparando com o do banco
 
   if (!validaSenha) {
-    return response.status(401).json({message: "Senha incorreta!"});
+    return response.status(401).json({message: "Usuário ou senha incorreto"});
   }
 
   const token = jwt.sign({ id: usuarios.id }, "your_jwt_secret", {
